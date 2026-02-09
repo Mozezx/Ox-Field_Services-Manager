@@ -1,0 +1,68 @@
+# ============================================================
+# OX FIELD SERVICES - DOCKER COMPOSE
+# PostgreSQL 15 + PostGIS 3.3
+# ============================================================
+
+version: '3.8'
+
+services:
+  # ============================================================
+  # DATABASE - PostgreSQL com PostGIS
+  # ============================================================
+  oxfield-db:
+    image: postgis/postgis:15-3.3
+    container_name: oxfield-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: oxfield
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      # Persistência de dados
+      - ./postgres-data:/var/lib/postgresql/data
+      # NOTA: O Flyway gerencia o schema. Não usar initdb.d
+    networks:
+      - oxfield-network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres -d oxfield" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # ============================================================
+  # REDIS - Cache & Session (opcional, para uso futuro)
+  # ============================================================
+  oxfield-redis:
+    image: redis:7-alpine
+    container_name: oxfield-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis-data:/data
+    networks:
+      - oxfield-network
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+# ============================================================
+# NETWORKS
+# ============================================================
+networks:
+  oxfield-network:
+    name: oxfield-network
+    driver: bridge
+
+# ============================================================
+# VOLUMES (declaração explícita)
+# ============================================================
+volumes:
+  postgres-data:
+  redis-data:

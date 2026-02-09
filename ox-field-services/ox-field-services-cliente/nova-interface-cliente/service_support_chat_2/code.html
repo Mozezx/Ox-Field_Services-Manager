@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Service Details View - Ox Field Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#11add4",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#101e22",
+                        "brand-dark": "#0B242A", 
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem", // 16px
+                        "xl": "1.5rem",
+                        "2xl": "1.25rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(0,0,0,0.1);
+            border-radius: 20px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background-color: rgba(255,255,255,0.1);
+        }.pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<header class="relative w-full h-[360px] shrink-0">
+<div class="absolute inset-0 bg-slate-200 dark:bg-slate-800 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCY86NuYAQuMwewDmz41vdzj_jeWeg3B22YrTxufzp4mLaiQYD13I-xOiOBUeDZETibDdYCdi7Z2Fxd6p8W9lAAM-ygij7UvWDdY1t2wlEB0AQNfhI3-Cyf7TAsu3-1n8-aSG3LxyOOfKn5WDbLcyL2aDymDsb51dAsz24GP2PXwwjE41elP572X0DbsN4fP2y1HQ10BwDQKpjYsYiGllh_CAwY8ldwgYXyZZWfa2X_iviEWXqQB3qFAAkN0RFoionJNGJnkINiWvM");'></div>
+<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/10"></div>
+<div class="absolute top-0 left-0 w-full p-4 pt-12 flex justify-between items-center z-10">
+<button class="size-10 flex items-center justify-center bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/30 transition-colors border border-white/10 active:scale-95">
+<span class="material-symbols-outlined text-[20px]">arrow_back_ios_new</span>
+</button>
+<div class="flex gap-3">
+<button class="size-10 flex items-center justify-center bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/30 transition-colors border border-white/10 active:scale-95">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+</button>
+<button class="size-10 flex items-center justify-center bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/30 transition-colors border border-white/10 active:scale-95">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+</header>
+<main class="relative -mt-10 flex-1 bg-background-light dark:bg-background-dark rounded-t-[32px] overflow-hidden shadow-[0_-4px_20px_rgba(0,0,0,0.1)] z-10 flex flex-col">
+<div class="flex-1 overflow-y-auto px-6 pt-8 pb-32">
+<div class="w-12 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full mx-auto mb-6 opacity-60"></div>
+<div class="flex flex-col gap-4 mb-6">
+<div class="flex justify-between items-start gap-4">
+<h1 class="text-2xl font-bold text-slate-900 dark:text-white leading-tight">Residential Electrical Repair</h1>
+<div class="text-right shrink-0">
+<div class="text-2xl font-bold text-primary">$89</div>
+<div class="text-xs text-slate-500 font-medium mt-0.5">starting at</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="inline-flex items-center gap-1 bg-white dark:bg-slate-800 px-2.5 py-1 rounded-lg shadow-sm border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-amber-400 text-[18px] fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="font-bold text-sm text-slate-900 dark:text-white">4.8</span>
+</div>
+<span class="text-sm text-slate-500 underline decoration-slate-300 dark:decoration-slate-600 underline-offset-2">124 Reviews</span>
+<span class="text-slate-300 dark:text-slate-700">•</span>
+<span class="text-sm text-slate-500">Electrical</span>
+</div>
+</div>
+<hr class="border-slate-200 dark:border-slate-800 mb-6"/>
+<section class="mb-8">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Description</h2>
+<p class="text-[15px] leading-relaxed text-slate-600 dark:text-slate-300">
+                 Our certified electricians provide comprehensive diagnostics and repair for all residential electrical systems. This service includes a full safety check of your main panel, identification of faulty wiring, and immediate repairs for common issues. We ensure your home meets all safety codes.
+             </p>
+</section>
+<section class="mb-8">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white mb-4">What to expect</h2>
+<div class="bg-white dark:bg-[#1e2e34] rounded-lg p-5 shadow-sm border border-slate-100 dark:border-slate-800">
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 mt-0.5 text-[20px]">check_circle</span>
+<span class="text-[15px] text-slate-700 dark:text-slate-200">Professional system diagnostics</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 mt-0.5 text-[20px]">check_circle</span>
+<span class="text-[15px] text-slate-700 dark:text-slate-200">Safety inspection of main breaker panel</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 mt-0.5 text-[20px]">check_circle</span>
+<span class="text-[15px] text-slate-700 dark:text-slate-200">Transparent upfront pricing</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 mt-0.5 text-[20px]">check_circle</span>
+<span class="text-[15px] text-slate-700 dark:text-slate-200">Certified &amp; insured professionals</span>
+</li>
+</ul>
+</div>
+</section>
+<section class="mb-4">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white">Customer Reviews</h2>
+<button class="text-primary text-sm font-semibold hover:text-primary/80">View all</button>
+</div>
+<div class="flex flex-col gap-3">
+<div class="p-4 bg-white dark:bg-[#1e2e34] border border-slate-100 dark:border-slate-800 rounded-lg shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-slate-200 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPZDqgQuiBEhdwuaPRnTuYQxH1ppqejRtWZSvg2NnkrZd9gHNLyszudJo3y-LOuYn7zBuALZQ7J_4l3clcAzRj3XqSAt_QvBhs8CjhXDYyl2CwvMa8rgRzz9ZMAvX1Re3BYHkAgRexhsYLkOXnfcmhwt65KSqOWnQIlLxYALVStuSnFeuz1lJTEcBiK1uHyc1jrH2-GHZrpdn7QsI31_fykAE5AXWA7tlDinb4qhcHDAxxfWsvbG6M1Inl4vg27VCiLssBbdebApM")'></div>
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Sarah M.</span>
+</div>
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-[16px] fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Technician was on time and very professional. Fixed the issue with my flickering lights in under an hour. Highly recommend!
+                    </p>
+</div>
+<div class="p-4 bg-white dark:bg-[#1e2e34] border border-slate-100 dark:border-slate-800 rounded-lg shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-slate-200 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCbW9w8as8EcUQq3QlpMXIX338TFt06LYzDOiZTQv3It9oIZtTdTyTOM98ppdbKlzyuc52ZvQVVflrX0RoCeMgQZpJFHZb0QRE7L_Uch6CMjQPjuXhttwn8PX0ZuzfAhaODFg2Z7q03KpJsjRp3oyBEJcUV1MZWG6STCuLB3tHEXXWmP4gVsihiAUmTsCKdVISiAPNJztRs7yfABW8JzI0KxCtDODmWkdCU-uGaBS5P-tept2-bqluVNZODvDe1RU6jTVhnkrI7mcY")'></div>
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Mike R.</span>
+</div>
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-[16px] fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current" style="font-variation-settings: 'FILL' 0">star</span>
+</div>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Good service, but arrived a bit later than the window provided. Work quality was excellent though.
+                    </p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="fixed bottom-0 inset-x-0 z-50 bg-white dark:bg-[#101e22] border-t border-slate-200 dark:border-slate-800 pb-safe">
+<div class="px-4 py-4 max-w-4xl mx-auto flex items-center justify-between gap-4">
+<div class="flex flex-col pl-2">
+<span class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Total</span>
+<span class="text-2xl font-bold text-slate-900 dark:text-white">$89</span>
+</div>
+<button class="flex-1 bg-brand-dark hover:bg-opacity-90 text-white font-bold text-[16px] h-14 rounded-lg shadow-lg shadow-brand-dark/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span>Book Now</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</footer>
+
+</body></html>

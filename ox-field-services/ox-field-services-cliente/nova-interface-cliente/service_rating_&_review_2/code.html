@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0B242A", 
+                        "primary-light": "#1a3840",
+                        "background-light": "#f8f9fa",
+                        "background-dark": "#131d1f",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2629",
+                        "border-light": "#e5e7eb",
+                        "border-dark": "#2d3b3e",
+                        "gold": "#D4AF37",
+                        "gold-bg": "#FFF9E6"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem", 
+                        "lg": "1rem", // 16px as requested
+                        "xl": "1.5rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#101719] dark:text-gray-100 font-display transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-xl">
+<header class="sticky top-0 z-10 flex items-center bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm p-4 pb-2 justify-between">
+<div class="text-[#101719] dark:text-white flex size-12 shrink-0 items-center justify-center cursor-pointer hover:bg-gray-100 dark:hover:bg-white/5 rounded-full transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back</span>
+</div>
+<h2 class="text-[#101719] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">My Profile</h2>
+</header>
+<main class="flex-1 flex flex-col px-6 pb-8">
+<div class="flex flex-col items-center mt-6 mb-10">
+<div class="relative">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-28 w-28 shadow-md border-4 border-white dark:border-surface-dark" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCUJBQZvlK1yT4t7-Ezj1HKpGAw1VOZo44uM9OBaGnI9ZYPZyHfJGJiq5vqi--w47ifHYnwRi5wm4RnQjYAP7J4SI05JzwqyVnUqPJrsCBfPCaJuiYRg7ug32qu3P5fwm4OSAon7ZTcFIz5qtDdl8ov7MO6JS382xfu58lJhWYap0bWXIAV95CSCLqgNzd4Zb1g1R-6DUs82URL1QVQpG-qSmgtDHKAzGsEuUMoxMfy7iYs16JRrdukinEXZqH29lvXe5ogslRAmEw");'>
+</div>
+</div>
+<div class="mt-4 text-center">
+<h3 class="text-primary dark:text-white text-2xl font-bold leading-tight tracking-tight">Alex Morgan</h3>
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 mt-2 rounded-full bg-[#FFF9E6] dark:bg-yellow-900/30 text-[#9E7F11] dark:text-yellow-400">
+<span class="material-symbols-outlined text-[16px] fill-current">stars</span>
+<span class="text-xs font-bold uppercase tracking-wider">Gold Member</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<button class="group flex items-center p-4 bg-surface-light dark:bg-surface-dark rounded-lg shadow-sm border border-transparent hover:border-gray-200 dark:hover:border-gray-700 active:scale-[0.98] transition-all duration-200">
+<div class="h-10 w-10 rounded-full bg-background-light dark:bg-white/5 flex items-center justify-center text-primary dark:text-gray-300 group-hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">person</span>
+</div>
+<span class="ml-4 text-[15px] font-semibold text-[#101719] dark:text-gray-100 flex-1 text-left">Personal Information</span>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-600 group-hover:text-primary dark:group-hover:text-white transition-colors">chevron_right</span>
+</button>
+<button class="group flex items-center p-4 bg-surface-light dark:bg-surface-dark rounded-lg shadow-sm border border-transparent hover:border-gray-200 dark:hover:border-gray-700 active:scale-[0.98] transition-all duration-200">
+<div class="h-10 w-10 rounded-full bg-background-light dark:bg-white/5 flex items-center justify-center text-primary dark:text-gray-300 group-hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div class="ml-4 flex-1 text-left">
+<div class="text-[15px] font-semibold text-[#101719] dark:text-gray-100">My Addresses</div>
+<div class="text-xs font-medium text-gray-500 dark:text-gray-400 mt-0.5 truncate max-w-[200px]">842 Willow Creek Dr, Austin, TX</div>
+</div>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-600 group-hover:text-primary dark:group-hover:text-white transition-colors">chevron_right</span>
+</button>
+<button class="group flex items-center p-4 bg-surface-light dark:bg-surface-dark rounded-lg shadow-sm border border-transparent hover:border-gray-200 dark:hover:border-gray-700 active:scale-[0.98] transition-all duration-200">
+<div class="h-10 w-10 rounded-full bg-background-light dark:bg-white/5 flex items-center justify-center text-primary dark:text-gray-300 group-hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">credit_card</span>
+</div>
+<span class="ml-4 text-[15px] font-semibold text-[#101719] dark:text-gray-100 flex-1 text-left">Payment Methods</span>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-600 group-hover:text-primary dark:group-hover:text-white transition-colors">chevron_right</span>
+</button>
+<button class="group flex items-center p-4 bg-surface-light dark:bg-surface-dark rounded-lg shadow-sm border border-transparent hover:border-gray-200 dark:hover:border-gray-700 active:scale-[0.98] transition-all duration-200">
+<div class="h-10 w-10 rounded-full bg-background-light dark:bg-white/5 flex items-center justify-center text-primary dark:text-gray-300 group-hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<span class="ml-4 text-[15px] font-semibold text-[#101719] dark:text-gray-100 flex-1 text-left">Notification Settings</span>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-600 group-hover:text-primary dark:group-hover:text-white transition-colors">chevron_right</span>
+</button>
+<button class="group flex items-center p-4 bg-surface-light dark:bg-surface-dark rounded-lg shadow-sm border border-transparent hover:border-gray-200 dark:hover:border-gray-700 active:scale-[0.98] transition-all duration-200">
+<div class="h-10 w-10 rounded-full bg-background-light dark:bg-white/5 flex items-center justify-center text-primary dark:text-gray-300 group-hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">help</span>
+</div>
+<span class="ml-4 text-[15px] font-semibold text-[#101719] dark:text-gray-100 flex-1 text-left">Help Center</span>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-600 group-hover:text-primary dark:group-hover:text-white transition-colors">chevron_right</span>
+</button>
+</div>
+<div class="mt-auto pt-10 flex justify-center pb-6">
+<button class="text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300 text-sm font-semibold transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+                    Log Out
+                </button>
+</div>
+</main>
+</div>
+
+</body></html>

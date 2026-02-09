@@ -1,0 +1,36 @@
+# ============================================================
+# OX FIELD SERVICES - GIT IGNORE
+# ============================================================
+
+# Docker volumes (dados locais)
+postgres-data/
+redis-data/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Build
+target/
+build/
+*.class
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env.local
+.env.*.local
+
+# Node
+node_modules/
+dist/
+coverage/
+package-lock.json
+

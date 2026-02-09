@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ox Field Services - Atividades</title>
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0a2329",
+                        "secondary": "#57838e",
+                        "accent-teal": "#2c9e8e",
+                        "accent-amber": "#d97706",
+                        "background-light": "#f9fbfb",
+                        "background-dark": "#131d1f",
+                        "card-light": "#ffffff",
+                        "card-dark": "#1a2628",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark min-h-screen text-slate-900 dark:text-slate-100 transition-colors duration-200">
+    <div
+        class="relative flex flex-col h-full min-h-screen w-full max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden pb-24">
+        <!-- Top App Bar -->
+        <div
+            class="sticky top-0 z-10 flex items-center bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm p-4 pb-2 justify-between border-b border-gray-100 dark:border-gray-800">
+            <button onclick="navigateTo('../marketplace_home/code.html')"
+                class="text-primary dark:text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <h2
+                class="text-primary dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
+                Atividades</h2>
+            <div class="flex w-12 items-center justify-end">
+                <button
+                    class="flex items-center justify-center size-12 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-primary dark:text-white transition-colors">
+                    <span class="material-symbols-outlined">filter_list</span>
+                </button>
+            </div>
+        </div>
+        <!-- Tabs -->
+        <div class="pt-2">
+            <div class="flex border-b border-gray-200 dark:border-gray-700 px-4 justify-between">
+                <button
+                    class="group flex flex-col items-center justify-center border-b-[3px] border-b-primary dark:border-b-white pb-[13px] pt-4 flex-1">
+                    <p class="text-primary dark:text-white text-sm font-bold leading-normal tracking-[0.015em]">Em
+                        Andamento</p>
+                </button>
+                <button
+                    class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent pb-[13px] pt-4 flex-1 hover:border-b-gray-300 dark:hover:border-b-gray-600 transition-colors">
+                    <p
+                        class="text-secondary dark:text-gray-400 text-sm font-bold leading-normal tracking-[0.015em] group-hover:text-primary dark:group-hover:text-white transition-colors">
+                        Agendados</p>
+                </button>
+            </div>
+        </div>
+        <!-- Content List -->
+        <div class="flex flex-col gap-4 p-4">
+            <!-- Card 1: In Progress - Tracking -->
+            <div
+                class="flex flex-col gap-3 rounded-xl bg-card-light dark:bg-card-dark p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+                <!-- Header with Status -->
+                <div class="flex justify-between items-start">
+                    <div class="flex items-center gap-2">
+                        <span
+                            class="inline-flex items-center gap-1 rounded-full bg-teal-50 dark:bg-teal-900/30 px-2 py-1 text-xs font-bold text-teal-700 dark:text-teal-300 uppercase tracking-wide">
+                            <span class="size-1.5 rounded-full bg-teal-500 animate-pulse"></span>
+                            En Route
+                        </span>
+                    </div>
+                    <span class="text-secondary dark:text-gray-400 text-xs font-medium">ID: #8392</span>
+                </div>
+                <!-- Main Content -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col justify-between flex-1 gap-1">
+                        <h3 class="text-primary dark:text-white text-lg font-bold leading-tight">Electrical Inspection
+                        </h3>
+                        <p class="text-secondary dark:text-gray-400 text-sm font-medium">Technician arriving in 15m</p>
+                        <!-- Technician Mini Profile -->
+                        <div class="flex items-center gap-2 mt-2">
+                            <div class="size-6 rounded-full bg-gray-200 dark:bg-gray-700 bg-cover bg-center"
+                                data-alt="Small portrait of technician Carlos"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMwY4aB4f0JWfXs-R79bGExEI361oYXaO4wos7Xu_vmcIKNg602mCEYbgModa3DscTfXWXOHVTYiGM0UB4nmuBqgPgw-hvSELok54YEla6tgdRfSbE9t_D4GmJI9--CPRJWv61vZ-wW8t0F-lj9PDzKPC2QwdxHQg3CoIJZwJL6qidU1ogdlp3DPD9ATn9Pta-32XVuRkI9lRcidZ4pQJHChZox3n4k0DvteRizS10gGiDeCdYz-JKcEIcu6hRFFDkBSfP9MneNQY');">
+                            </div>
+                            <p class="text-xs text-primary dark:text-gray-300 font-medium">Carlos M. <span
+                                    class="text-amber-500">★ 4.9</span></p>
+                        </div>
+                    </div>
+                    <!-- Visual / Map -->
+                    <div class="w-24 aspect-square rounded-lg overflow-hidden relative shrink-0">
+                        <div class="absolute inset-0 bg-cover bg-center" data-alt="Map view showing technician location"
+                            data-location="City Map" style="background-image: url('https://placeholder.pics/svg/300')">
+                        </div>
+                        <div class="absolute inset-0 bg-black/10"></div>
+                    </div>
+                </div>
+                <!-- Action Button -->
+                <button onclick="navigateTo('../live_technician_tracking/code.html')"
+                    class="mt-2 flex w-full cursor-pointer items-center justify-center rounded-lg h-10 bg-primary text-white gap-2 text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all active:scale-[0.98]">
+                    <span class="material-symbols-outlined text-[18px]">location_on</span>
+                    Track Live
+                </button>
+            </div>
+            <!-- Card 2: In Progress - Job Started -->
+            <div
+                class="flex flex-col gap-3 rounded-xl bg-card-light dark:bg-card-dark p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+                <div class="flex justify-between items-start">
+                    <div class="flex items-center gap-2">
+                        <span
+                            class="inline-flex items-center gap-1 rounded-full bg-blue-50 dark:bg-blue-900/30 px-2 py-1 text-xs font-bold text-blue-700 dark:text-blue-300 uppercase tracking-wide">
+                            <span class="size-1.5 rounded-full bg-blue-500"></span>
+                            Job Started
+                        </span>
+                    </div>
+                    <span class="text-secondary dark:text-gray-400 text-xs font-medium">ID: #8401</span>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex flex-col justify-between flex-1 gap-1">
+                        <h3 class="text-primary dark:text-white text-lg font-bold leading-tight">Plumbing Repair</h3>
+                        <p class="text-secondary dark:text-gray-400 text-sm font-medium">Kitchen sink maintenance</p>
+                        <div class="flex items-center gap-2 mt-2">
+                            <div class="size-6 rounded-full bg-gray-200 dark:bg-gray-700 bg-cover bg-center"
+                                data-alt="Small portrait of technician Ana"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_pMzTPOZFEprIIBbSIwAgvHbyJ2eOCWBq3sn0qs1Vz33cDcFa7jKngJlHRqYgnceCa0EqnC26ZSJFvHaNoOEPWoOETj-eFFiaARM7eBXI_Zkdj_PN5Cvp_lbd8sl8Lgxn56wok5ff850IK8ki-mAjcBoA3a8k67CEt28Ibi0UmhHC-hjuMP79w2SSZJHpHm1g47Ck-0dRHGBuZE7L5bQ5Cv0VuP3y0TJ6LHjdKPUIVh-us6YD-tURjL4VP5UKOu1MJmK5ic6d3HE');">
+                            </div>
+                            <p class="text-xs text-primary dark:text-gray-300 font-medium">Ana S. <span
+                                    class="text-amber-500">★ 5.0</span></p>
+                        </div>
+                    </div>
+                    <div
+                        class="w-24 aspect-square rounded-lg overflow-hidden relative shrink-0 bg-gray-100 dark:bg-gray-800">
+                        <div class="absolute inset-0 bg-cover bg-center"
+                            data-alt="Close up of plumbing tools on a surface"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDbN619K3u0XoTqUCckWykMuZtjQM4am_hCpPdFycZxzWmFqq_ukdnVNR-QrULX31vRCHPnq8Oqz4yGU7rEQR6qyotMYwk4csOo-JbevYhP50AmX4YoNT4ADsI2K5M6iA6hT9sD3FG-3RR_KImiv2K2Jo8k9kv_6r45RHV_0jpfXSdsC-Jj1qaM6yRUUkas9evwBFVkYiICb6EcfGG_25jmX1XcomVZAyCHc_l4S-LDIVGXj1doxwbWzQsnhR3o2x7y3UdxzCuNjlU')">
+                        </div>
+                    </div>
+                </div>
+                <button onclick="navigateTo('../service_support_chat_1/code.html')"
+                    class="mt-2 flex w-full cursor-pointer items-center justify-center rounded-lg h-10 bg-gray-100 dark:bg-gray-800 text-primary dark:text-white gap-2 text-sm font-bold hover:bg-gray-200 dark:hover:bg-gray-700 transition-all active:scale-[0.98]">
+                    <span class="material-symbols-outlined text-[18px]">chat</span>
+                    Message Technician
+                </button>
+            </div>
+            <!-- Card 3: Scheduled (Preview style) -->
+            <div
+                class="flex flex-col gap-3 rounded-xl bg-card-light dark:bg-card-dark p-4 shadow-sm border border-gray-100 dark:border-gray-800 opacity-90">
+                <div class="flex justify-between items-start">
+                    <span
+                        class="inline-flex items-center gap-1 rounded-full bg-amber-50 dark:bg-amber-900/30 px-2 py-1 text-xs font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wide">
+                        Confirmed
+                    </span>
+                    <span class="text-secondary dark:text-gray-400 text-xs font-medium">Nov 14 • 09:00 AM</span>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex flex-col justify-between flex-1 gap-1">
+                        <h3 class="text-primary dark:text-white text-lg font-bold leading-tight">Garden Maintenance</h3>
+                        <p class="text-secondary dark:text-gray-400 text-sm font-medium">Weekly trimming &amp; cleaning
+                        </p>
+                        <p class="text-xs text-gray-400 mt-2">Assignment Pending</p>
+                    </div>
+                    <div class="w-24 aspect-square rounded-lg overflow-hidden relative shrink-0">
+                        <div class="absolute inset-0 bg-cover bg-center" data-alt="Green lush garden with sunlight"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDDkwpEMHqM6ziJGeV1smKXVbNN6mB7inMsMXXD0x-0IQCEouHF8Vxvt_mvIwcLTEJy62jBs8FdDLUc0nQ9VomDgcOZ-LnvorV35Ok8KceB3LFJ7NaK-D9bEqrPCD_TFOgqizTFDcHvU-4iUtvtWH5VHt1E4Wa8xJ15akm8CEq6d-cFTIhrw9x24Bfy5Yzgz1Aof1MYvd2yaEGbcEtMSLQTz6901gRNK2uQnO_etU_nQXsalhxFJ2z5CbOKYAXauXJpppNyFeNQPsI')">
+                        </div>
+                    </div>
+                </div>
+                <button
+                    class="mt-2 flex w-full cursor-pointer items-center justify-center rounded-lg h-10 border border-gray-200 dark:border-gray-700 bg-transparent text-primary dark:text-white gap-2 text-sm font-bold hover:bg-gray-50 dark:hover:bg-gray-800 transition-all active:scale-[0.98]">
+                    View Details
+                    <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                </button>
+            </div>
+        </div>
+        <!-- Bottom Navigation -->
+        <nav
+            class="fixed bottom-0 left-0 right-0 w-full max-w-md mx-auto bg-white dark:bg-[#1A2629] border-t border-gray-100 dark:border-white/5 pb-6 pt-3 px-6 z-50">
+            <div class="flex justify-between items-center">
+                <button onclick="navigateTo('../marketplace_home/code.html')"
+                    class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-white transition-colors">
+                    <div class="p-1.5">
+                        <span class="material-symbols-outlined">home</span>
+                    </div>
+                    <span class="text-[10px] font-medium">Home</span>
+                </button>
+                <button class="flex flex-col items-center gap-1 text-primary dark:text-white">
+                    <div class="bg-primary/10 dark:bg-white/10 p-1.5 rounded-full">
+                        <span class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+                    </div>
+                    <span class="text-[10px] font-bold">Bookings</span>
+                </button>
+                <button onclick="navigateTo('../service_support_chat_1/code.html')"
+                    class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-white transition-colors">
+                    <div class="p-1.5">
+                        <span class="material-symbols-outlined">chat_bubble</span>
+                    </div>
+                    <span class="text-[10px] font-medium">Messages</span>
+                </button>
+                <button onclick="navigateTo('../user_profile/code.html')"
+                    class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-white transition-colors">
+                    <div class="p-1.5">
+                        <span class="material-symbols-outlined">person</span>
+                    </div>
+                    <span class="text-[10px] font-medium">Profile</span>
+                </button>
+            </div>
+        </nav>
+    </div>
+    <!-- Animation helper for the fill icon effect -->
+    <style>
+        .font-variation-settings-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <script>
+        function navigateTo(url) {
+            document.body.style.opacity = '0';
+            document.body.style.transform = 'translateX(-20px)';
+            setTimeout(() => window.location.href = url, 200);
+        }
+    </script>
+    <style>
+        body {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+    </style>
+</body>
+
+</html>

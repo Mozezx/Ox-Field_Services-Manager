@@ -1,0 +1,182 @@
+# ============================================================
+# OX FIELD SERVICES - APPLICATION CONFIGURATION
+# ============================================================
+
+spring:
+  application:
+    name: ox-field-services
+  
+  # Virtual Threads (Java 21) - melhora handling de I/O concorrente
+  threads:
+    virtual:
+      enabled: true
+  
+  # ============================================================
+  # DATABASE
+  # ============================================================
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:oxfield}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+  
+  jpa:
+    database-platform: org.hibernate.spatial.dialect.postgis.PostgisPG10Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+        types:
+          print:
+            banner: false
+    open-in-view: false
+  
+  # ============================================================
+  # FLYWAY MIGRATIONS
+  # ============================================================
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+  
+  # ============================================================
+  # REDIS (Cache & Session)
+  # ============================================================
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      timeout: 2000ms
+
+# ============================================================
+# SERVER
+# ============================================================
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: /api/v1
+  error:
+    include-message: always
+    include-binding-errors: always
+
+# ============================================================
+# SECURITY / JWT
+# ============================================================
+security:
+  jwt:
+    secret: ${JWT_SECRET:Y2hhbmdlLXRoaXMtaW4tcHJvZHVjdGlvbi0yNTZiaXRz}
+    access-token-expiry: 15m
+    refresh-token-expiry: 7d
+    issuer: ox-field-services
+
+# ============================================================
+# AWS S3 (Storage)
+# ============================================================
+aws:
+  s3:
+    bucket: ${AWS_S3_BUCKET:oxfield-storage}
+    region: ${AWS_REGION:eu-west-1}
+  credentials:
+    access-key: ${AWS_ACCESS_KEY:}
+    secret-key: ${AWS_SECRET_KEY:}
+
+# ============================================================
+# GOOGLE MAPS
+# ============================================================
+google:
+  maps:
+    api-key: ${GOOGLE_MAPS_API_KEY:}
+
+# ============================================================
+# FIREBASE (FCM Push Notifications)
+# ============================================================
+firebase:
+  credentials-file: ${FIREBASE_CREDENTIALS_PATH:classpath:firebase-service-account.json}
+  project-id: ${FIREBASE_PROJECT_ID:oxfield-services}
+
+# ============================================================
+# BUSINESS RULES
+# ============================================================
+oxfield:
+  # Base URL of the technician app (for building invite links)
+  tech-app-base-url: ${TECH_APP_BASE_URL:http://localhost:3004}
+  # Base URL of the client app (for building client invite links; must point to app cliente, not admin empresas)
+  client-app-base-url: ${CLIENT_APP_BASE_URL:http://localhost:3005}
+  # Raio máximo para chegada do técnico (metros)
+  arrival-radius-meters: 200
+  
+  # VAT padrão (Bélgica 21%)
+  default-vat-rate: 0.21
+  
+  # Pricing defaults
+  pricing:
+    default-base-rate: 50.00
+    default-km-rate: 0.75
+    category-multipliers:
+      hvac: 1.2
+      electrical: 1.1
+      plumbing: 1.0
+      general: 0.9
+  
+  # Limites de upload e pasta local para documentos
+  upload:
+    max-file-size: 10MB
+    allowed-image-types: image/jpeg,image/png,image/webp
+    max-photos-per-order: 20
+    local-dir: ${UPLOADS_DIR:uploads}
+    # use-s3: true só quando AWS estiver configurado (produção). Padrão: pasta local.
+    use-s3: ${OXFIELD_USE_S3:false}
+
+# ============================================================
+# LOGGING
+# ============================================================
+logging:
+  level:
+    root: INFO
+    com.oxfield: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# ============================================================
+# ACTUATOR (Health & Metrics)
+# ============================================================
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: when_authorized
+  health:
+    db:
+      enabled: true
+    redis:
+      enabled: true
+
+# ============================================================
+# SPRINGDOC / OPENAPI
+# ============================================================
+springdoc:
+  api-docs:
+    path: /docs/api-docs
+  swagger-ui:
+    path: /docs/swagger-ui
+    operationsSorter: method
+    tagsSorter: alpha
+  info:
+    title: Ox Field Services API
+    version: 1.0.0
+    description: Field Service Management SaaS Multitenant API

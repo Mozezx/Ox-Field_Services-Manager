@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout Summary - Ox Field Services</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0a2329",
+                        "primary-hover": "#153d46",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#131d1f",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1c2a2e",
+                        "text-main": "#0a2329",
+                        "text-secondary": "#57838e",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem", 
+                        "lg": "1rem", 
+                        "xl": "1.5rem", 
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "soft": "0 4px 20px rgba(0, 0, 0, 0.05)",
+                        "card": "0 2px 8px rgba(0, 0, 0, 0.04)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display antialiased flex flex-col min-h-screen selection:bg-primary selection:text-white">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md px-4 py-4 flex items-center justify-between border-b border-transparent transition-colors duration-200">
+<button aria-label="Go back" class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 active:scale-95 transition-all text-text-main dark:text-white group">
+<span class="material-symbols-outlined group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold text-text-main dark:text-white tracking-tight">Checkout</h1>
+<div class="size-10"></div> <!-- Spacer for center alignment -->
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-lg mx-auto px-4 pb-32 pt-2 flex flex-col gap-6">
+<!-- Headline -->
+<div>
+<h2 class="text-2xl font-extrabold text-primary dark:text-white tracking-tight leading-tight">Booking Summary</h2>
+<p class="text-text-secondary dark:text-gray-400 text-sm mt-1">Review your service details before payment.</p>
+</div>
+<!-- Service Card -->
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-lg shadow-soft border border-gray-100 dark:border-gray-800 flex flex-col gap-4">
+<div class="flex gap-4">
+<div class="w-24 h-24 shrink-0 rounded-lg bg-center bg-cover bg-no-repeat shadow-inner" data-alt="Close up of electrician repairing wall socket" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCSB9ZwfP7nXzla_DHwQNhRItOb_A3wl4AgTuhx74cMJ7zkUBdrj_0djxRTs4uqfI_dhMjkROGZ5e0gzBmZJABfBe1OREr6g7RQJp5tTZ-KxoJW1I1ZRr1m4nLnux8me0empSuGMRsFqYH9DnXXDseh9v-zwOvck8DOuORYoswrXuFeJ7R8wgKS1G4UNMauRRqzUJF6dXsfa5XC_NzEBT4T8daDs9q-UeqAQAUlCazqjvHpbmd2ND-1oQbk5bNnFwnDSNpqX2xzHxI");'>
+</div>
+<div class="flex flex-col flex-1 justify-center gap-1">
+<span class="inline-flex items-center w-fit px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary dark:bg-white/10 dark:text-white mb-1">
+                        Home Service
+                    </span>
+<h3 class="text-primary dark:text-white font-bold text-lg leading-snug">Residential Electrical Repair</h3>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-text-secondary text-[16px]">verified_user</span>
+<p class="text-text-secondary dark:text-gray-400 text-xs font-medium">Ox Certified Pro</p>
+</div>
+</div>
+</div>
+<div class="h-px bg-gray-100 dark:bg-gray-800 w-full"></div>
+<div class="flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<div class="size-8 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center shrink-0 text-primary dark:text-white">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</div>
+<div>
+<p class="text-xs text-text-secondary dark:text-gray-400 font-medium uppercase tracking-wide">Date &amp; Time</p>
+<p class="text-sm font-semibold text-primary dark:text-white">Sept 24, 2023 • 10:00 AM</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="size-8 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center shrink-0 text-primary dark:text-white">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+</div>
+<div>
+<p class="text-xs text-text-secondary dark:text-gray-400 font-medium uppercase tracking-wide">Location</p>
+<p class="text-sm font-semibold text-primary dark:text-white">123 Maple Drive, Springfield</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Payment Method -->
+<div class="flex flex-col gap-3">
+<h3 class="text-lg font-bold text-primary dark:text-white px-1">Payment Method</h3>
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-lg shadow-soft border border-gray-100 dark:border-gray-800 flex items-center justify-between group cursor-pointer hover:border-primary/30 transition-all">
+<div class="flex items-center gap-4">
+<!-- Custom CSS Mastercard Icon -->
+<div class="w-12 h-8 bg-[#1a1f36] rounded border border-white/10 relative overflow-hidden flex items-center justify-center shadow-sm">
+<div class="absolute left-2 w-5 h-5 bg-[#eb001b] rounded-full opacity-90 mix-blend-screen"></div>
+<div class="absolute right-2 w-5 h-5 bg-[#f79e1b] rounded-full opacity-90 mix-blend-screen"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-primary dark:text-white font-bold text-sm">Mastercard •••• 5678</span>
+<span class="text-text-secondary dark:text-gray-400 text-xs">Expires 12/25</span>
+</div>
+</div>
+<button class="text-primary dark:text-white text-sm font-bold underline decoration-primary/30 underline-offset-4 hover:decoration-primary transition-all">Change</button>
+</div>
+</div>
+<!-- Additional Notes -->
+<div class="flex flex-col gap-3">
+<h3 class="text-lg font-bold text-primary dark:text-white px-1">Instructions</h3>
+<div class="bg-surface-light dark:bg-surface-dark p-1 rounded-lg shadow-soft border border-gray-100 dark:border-gray-800 focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<div class="flex items-center px-3">
+<span class="material-symbols-outlined text-text-secondary">description</span>
+<input class="w-full bg-transparent border-none text-primary dark:text-white placeholder-text-secondary/60 dark:placeholder-gray-500 focus:ring-0 py-3 text-sm" placeholder="Add gate code or instructions (Optional)" type="text"/>
+</div>
+</div>
+</div>
+<!-- Price Breakdown -->
+<div class="flex flex-col gap-3">
+<h3 class="text-lg font-bold text-primary dark:text-white px-1">Price Breakdown</h3>
+<div class="bg-surface-light dark:bg-surface-dark p-5 rounded-lg shadow-soft border border-gray-100 dark:border-gray-800 flex flex-col gap-3">
+<div class="flex justify-between items-center text-sm group">
+<span class="text-text-secondary dark:text-gray-400 group-hover:text-primary transition-colors">Service Fee</span>
+<span class="text-primary dark:text-white font-medium">$120.00</span>
+</div>
+<div class="flex justify-between items-center text-sm group">
+<span class="text-text-secondary dark:text-gray-400 group-hover:text-primary transition-colors">Materials (Est.)</span>
+<span class="text-primary dark:text-white font-medium">$45.00</span>
+</div>
+<div class="flex justify-between items-center text-sm group">
+<span class="text-text-secondary dark:text-gray-400 group-hover:text-primary transition-colors">Taxes &amp; Fees</span>
+<span class="text-primary dark:text-white font-medium">$12.50</span>
+</div>
+<div class="my-2 border-t border-dashed border-gray-200 dark:border-gray-700"></div>
+<div class="flex justify-between items-center">
+<span class="text-lg font-bold text-primary dark:text-white">Total</span>
+<span class="text-xl font-extrabold text-primary dark:text-white">$177.50</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Footer -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface-light/90 dark:bg-surface-dark/95 backdrop-blur-xl border-t border-gray-200/50 dark:border-gray-800 p-4 pb-8 shadow-[0_-8px_30px_rgba(0,0,0,0.08)]">
+<div class="max-w-lg mx-auto w-full flex flex-col gap-3">
+<div class="flex items-center justify-center gap-1.5 text-xs text-text-secondary dark:text-gray-400 opacity-80">
+<span class="material-symbols-outlined text-[14px] fill-current">lock</span>
+<span class="font-medium">Payments are secure and encrypted</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary-hover active:scale-[0.98] transition-all duration-200 text-white font-bold text-lg h-14 rounded-lg shadow-lg shadow-primary/25 flex items-center justify-between px-6 group">
+<span>Confirm and Pay</span>
+<span class="bg-white/10 px-2 py-1 rounded text-base font-semibold group-hover:bg-white/20 transition-colors">$177.50</span>
+</button>
+</div>
+</div>
+</body></html>

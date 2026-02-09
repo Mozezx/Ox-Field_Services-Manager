@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>My Profile - Ox Field Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0a2329",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#131d1f",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: 100dvh;
+        }
+
+        .page-transition {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-primary dark:text-white antialiased page-transition">
+    <div
+        class="relative flex h-full min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden pb-24">
+        <!-- Header -->
+        <header class="bg-primary pt-12 pb-8 px-5 rounded-b-[2.5rem] relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: radial-gradient(circle at 70% 20%, #ffffff 1px, transparent 1px); background-size: 24px 24px;">
+            </div>
+            <div class="relative z-10 flex flex-col items-center">
+                <div
+                    class="size-24 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/20 mb-4 overflow-hidden">
+                    <div class="w-full h-full bg-cover bg-center"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUJBQZvlK1yT4t7-Ezj1HKpGAw1VOZo44uM9OBaGnI9ZYPZyHfJGJiq5vqi--w47ifHYnwRi5wm4RnQjYAP7J4SI05JzwqyVnUqPJrsCBfPCaJuiYRg7ug32qu3P5fwm4OSAon7ZTcFIz5qtDdl8ov7MO6JS382xfu58lJhWYap0bWXIAV95CSCLqgNzd4Zb1g1R-6DUs82URL1QVQpG-qSmgtDHKAzGsEuUMoxMfy7iYs16JRrdukinEXZqH29lvXe5ogslRAmEw');">
+                    </div>
+                </div>
+                <h1 class="text-white text-xl font-bold mb-1">John Doe</h1>
+                <p class="text-white/70 text-sm">john.doe@email.com</p>
+            </div>
+        </header>
+
+        <!-- Menu Options -->
+        <div class="flex-1 px-5 pt-6">
+            <!-- Account Section -->
+            <div class="mb-6">
+                <h2 class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3 px-1">
+                    Account</h2>
+                <div
+                    class="bg-white dark:bg-[#1a2629] rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800">
+                    <button
+                        class="w-full flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="flex items-center justify-center size-10 rounded-xl bg-primary/10 dark:bg-white/10 text-primary dark:text-white">
+                                <span class="material-symbols-outlined text-[20px]">person</span>
+                            </div>
+                            <span class="font-semibold text-primary dark:text-white">Personal Information</span>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-400">chevron_right</span>
+                    </button>
+                    <div class="h-px bg-gray-100 dark:bg-gray-800 mx-4"></div>
+                    <button onclick="navigateTo('../my_addresses/code.html')"
+                        class="w-full flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="flex items-center justify-center size-10 rounded-xl bg-primary/10 dark:bg-white/10 text-primary dark:text-white">
+                                <span class="material-symbols-outlined text-[20px]">location_on</span>
+                            </div>
+                            <span class="font-semibold text-primary dark:text-white">My Addresses</span>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-400">chevron_right</span>
+                    </button>
+                    <div class="h-px bg-gray-100 dark:bg-gray-800 mx-4"></div>
+                    <button
+                        class="w-full flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="flex items-center justify-center size-10 rounded-xl bg-primary/10 dark:bg-white/10 text-primary dark:text-white">
+                                <span class="material-symbols-outlined text-[20px]">credit_card</span>
+                            </div>
+                            <span class="font-semibold text-primary dark:text-white">Payment Methods</span>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-400">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Preferences Section -->
+            <div class="mb-6">
+                <h2 class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3 px-1">
+                    Preferences</h2>
+                <div
+                    class="bg-white dark:bg-[#1a2629] rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800">
+                    <button
+                        class="w-full flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="flex items-center justify-center size-10 rounded-xl bg-primary/10 dark:bg-white/10 text-primary dark:text-white">
+                                <span class="material-symbols-outlined text-[20px]">notifications</span>
+                            </div>
+                            <span class="font-semibold text-primary dark:text-white">Notifications</span>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-400">chevron_right</span>
+                    </button>
+                    <div class="h-px bg-gray-100 dark:bg-gray-800 mx-4"></div>
+                    <button
+                        class="w-full flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="flex items-center justify-center size-10 rounded-xl bg-primary/10 dark:bg-white/10 text-primary dark:text-white">
+                                <span class="material-symbols-outlined text-[20px]">dark_mode</span>
+                            </div>
+                            <span class="font-semibold text-primary dark:text-white">Appearance</span>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-400">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Support Section -->
+            <div class="mb-6">
+                <h2 class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3 px-1">
+                    Support</h2>
+                <div
+                    class="bg-white dark:bg-[#1a2629] rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800">
+                    <button
+                        class="w-full flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="flex items-center justify-center size-10 rounded-xl bg-primary/10 dark:bg-white/10 text-primary dark:text-white">
+                                <span class="material-symbols-outlined text-[20px]">help</span>
+                            </div>
+                            <span class="font-semibold text-primary dark:text-white">Help Center</span>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-400">chevron_right</span>
+                    </button>
+                    <div class="h-px bg-gray-100 dark:bg-gray-800 mx-4"></div>
+                    <button onclick="navigateTo('../login_screen/code.html')"
+                        class="w-full flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="flex items-center justify-center size-10 rounded-xl bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400">
+                                <span class="material-symbols-outlined text-[20px]">logout</span>
+                            </div>
+                            <span class="font-semibold text-red-600 dark:text-red-400">Log Out</span>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-400">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav
+            class="fixed bottom-0 left-0 right-0 w-full max-w-md mx-auto bg-white dark:bg-[#1A2629] border-t border-gray-100 dark:border-white/5 pb-6 pt-3 px-6 z-50">
+            <div class="flex justify-between items-center">
+                <button onclick="navigateTo('../marketplace_home/code.html')"
+                    class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-white transition-colors">
+                    <div class="p-1.5"><span class="material-symbols-outlined">home</span></div>
+                    <span class="text-[10px] font-medium">Home</span>
+                </button>
+                <button onclick="navigateTo('../active_services_list_1/code.html')"
+                    class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-white transition-colors">
+                    <div class="p-1.5"><span class="material-symbols-outlined">calendar_month</span></div>
+                    <span class="text-[10px] font-medium">Bookings</span>
+                </button>
+                <button onclick="navigateTo('../service_support_chat_1/code.html')"
+                    class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-white transition-colors">
+                    <div class="p-1.5"><span class="material-symbols-outlined">chat_bubble</span></div>
+                    <span class="text-[10px] font-medium">Messages</span>
+                </button>
+                <button class="flex flex-col items-center gap-1 text-primary dark:text-white">
+                    <div class="bg-primary/10 dark:bg-white/10 p-1.5 rounded-full"><span
+                            class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+                    </div>
+                    <span class="text-[10px] font-bold">Profile</span>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <script>
+        function navigateTo(url) {
+            document.body.style.opacity = '0';
+            document.body.style.transform = 'translateX(-20px)';
+            setTimeout(() => window.location.href = url, 200);
+        }
+    </script>
+</body>
+
+</html>

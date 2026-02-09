@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ox Field Services Marketplace</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b2028",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#131c1f",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-primary dark:text-white antialiased">
+<!-- Main Container -->
+<div class="relative flex h-full min-h-screen w-full max-w-md mx-auto flex-col overflow-x-hidden pb-24 shadow-2xl bg-background-light dark:bg-background-dark">
+<!-- Header Section -->
+<header class="bg-primary pt-12 pb-6 px-5 rounded-b-[2.5rem] shadow-lg z-20">
+<div class="flex items-center justify-between mb-6">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-1 text-gray-300 text-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>Current Location</span>
+</div>
+<div class="text-white text-xl font-bold tracking-tight">123 Maple Ave, Apt 4B</div>
+</div>
+<button class="flex items-center justify-center size-10 rounded-full bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+<!-- Search Bar -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400">search</span>
+</div>
+<input class="block w-full pl-11 pr-4 py-3.5 bg-white text-primary rounded-full border-none focus:ring-2 focus:ring-[#2D4A54] placeholder:text-gray-400 font-medium shadow-sm" placeholder="What needs fixing?" type="text"/>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col gap-6 -mt-2 pt-6">
+<!-- Promotional Banner Carousel -->
+<section class="w-full px-5">
+<div class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-4">
+<!-- Banner Card 1 -->
+<div class="snap-center shrink-0 w-full relative overflow-hidden rounded-lg bg-primary h-48 group">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-overlay transition-transform duration-700 group-hover:scale-105" data-alt="Professional plumber working on pipes under a sink" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuATEJn7mxl1fCbCuyl5O13wwP6vA8tAQmaxjZEFIBFhZn3o530-72f-8eus0WfrtuhyabjZGvcdbwxq_WqYhP5WTnhuHnH5OlwVBscvblhdZ3Xps2Qj6rv6hj99VrSssusE8elKbLHdz2xOgmstr7JyOT3qGdP-7uzOwhMrwMNac-Y6TYDW0FpK9WlqWhAoturx8_NWIP5KznAbrR9SCafLb_w60NMLs3SWhsSsA-WCu2qcWEAVTR2TSLtTutjr5VqpkQ516nyrehQ');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 to-transparent"></div>
+<div class="relative h-full flex flex-col justify-center p-6 text-white max-w-[75%]">
+<span class="text-xs font-bold uppercase tracking-wider text-[#A5D8E8] mb-2">Limited Offer</span>
+<h2 class="text-2xl font-bold leading-tight mb-3">Premium Maintenance</h2>
+<p class="text-sm text-gray-200 font-medium mb-4 line-clamp-2">Get 20% off all plumbing services this week only.</p>
+<button class="w-fit bg-white text-primary px-5 py-2.5 rounded-full text-sm font-bold hover:bg-gray-100 transition-colors flex items-center gap-1">
+                                Book Now
+                                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Banner Card 2 -->
+<div class="snap-center shrink-0 w-full relative overflow-hidden rounded-lg bg-[#2D4A54] h-48 group">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-overlay transition-transform duration-700 group-hover:scale-105" data-alt="Electrician checking a circuit breaker panel with tools" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhZ4kN3i9lbURLB_R-4NEoMN0Hti8d67zdyUB9YTTmVmA-xyq_IDWsyh1xLDVXDm6C3qxBKch8VjhXMtYahh8PFu1_DzA9DjcT6r6V-21zTvB7RAEI-DYAH7C6z4EC7-YU6nBSyHypt2mHnoJrdAYJ7xzxIKCbbbfjJJ9eTs-wkUFM4g0u7sEEQ2PV4JC0Xl09wSoweo0995yIj0Yr2lzQdTYPTV7f0rO6DWG2EvMFSFoyW6cG0Na784yx8kmbN5-1OecaHT5aqRo');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-[#2D4A54]/90 via-[#2D4A54]/40 to-transparent"></div>
+<div class="relative h-full flex flex-col justify-center p-6 text-white max-w-[75%]">
+<span class="text-xs font-bold uppercase tracking-wider text-[#FFD54F] mb-2">Safety First</span>
+<h2 class="text-2xl font-bold leading-tight mb-3">Electrical Checkup</h2>
+<p class="text-sm text-gray-200 font-medium mb-4">Keep your home safe with our comprehensive audit.</p>
+<button class="w-fit bg-white text-[#2D4A54] px-5 py-2.5 rounded-full text-sm font-bold hover:bg-gray-100 transition-colors flex items-center gap-1">
+                                Learn More
+                            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories Grid -->
+<section class="px-5">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-xl font-bold text-primary dark:text-white">Categories</h3>
+<button class="text-sm font-semibold text-[#2D4A54] dark:text-[#A5D8E8]">See All</button>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Category 1: Electrical -->
+<div class="bg-white dark:bg-primary/40 p-4 rounded-lg flex flex-col items-center justify-center gap-3 shadow-sm hover:shadow-md transition-all active:scale-95 cursor-pointer h-32 border border-gray-100 dark:border-white/5">
+<div class="p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-full text-yellow-600 dark:text-yellow-400">
+<span class="material-symbols-outlined text-[32px]">bolt</span>
+</div>
+<span class="font-bold text-base">Electrical</span>
+</div>
+<!-- Category 2: Plumbing -->
+<div class="bg-white dark:bg-primary/40 p-4 rounded-lg flex flex-col items-center justify-center gap-3 shadow-sm hover:shadow-md transition-all active:scale-95 cursor-pointer h-32 border border-gray-100 dark:border-white/5">
+<div class="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-full text-blue-600 dark:text-blue-400">
+<span class="material-symbols-outlined text-[32px]">water_drop</span>
+</div>
+<span class="font-bold text-base">Plumbing</span>
+</div>
+<!-- Category 3: AC Repair -->
+<div class="bg-white dark:bg-primary/40 p-4 rounded-lg flex flex-col items-center justify-center gap-3 shadow-sm hover:shadow-md transition-all active:scale-95 cursor-pointer h-32 border border-gray-100 dark:border-white/5">
+<div class="p-3 bg-cyan-50 dark:bg-cyan-900/20 rounded-full text-cyan-600 dark:text-cyan-400">
+<span class="material-symbols-outlined text-[32px]">ac_unit</span>
+</div>
+<span class="font-bold text-base">AC Repair</span>
+</div>
+<!-- Category 4: Cleaning -->
+<div class="bg-white dark:bg-primary/40 p-4 rounded-lg flex flex-col items-center justify-center gap-3 shadow-sm hover:shadow-md transition-all active:scale-95 cursor-pointer h-32 border border-gray-100 dark:border-white/5">
+<div class="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-full text-purple-600 dark:text-purple-400">
+<span class="material-symbols-outlined text-[32px]">cleaning_services</span>
+</div>
+<span class="font-bold text-base">Cleaning</span>
+</div>
+</div>
+</section>
+<!-- Popular Services List -->
+<section class="px-5 pb-6">
+<h3 class="text-xl font-bold text-primary dark:text-white mb-4">Popular Services</h3>
+<div class="flex flex-col gap-4">
+<!-- Service Card 1 -->
+<div class="bg-white dark:bg-primary/40 rounded-lg p-3 shadow-sm border border-gray-100 dark:border-white/5 flex gap-4 items-center">
+<div class="w-24 h-24 shrink-0 rounded-lg bg-gray-200 overflow-hidden relative">
+<img alt="AC technician servicing an outdoor unit" class="w-full h-full object-cover" data-alt="AC technician servicing an outdoor unit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCVeqjpTwNtA-efwT979wb-DuDoDBPPpOYamzB52UDWFVbtAQOCNDfX1YaNnVl__2_DT4tCWxQS_AIhDz7WDR87PpKMefomo9hM6QvW98Vmkha8z5NdHWHODh1gH90O3qcn_ysfZ5R5xtC_67dXYff4n8hTjnn_MPOySXZ3JL61jPPXGjmo6TKi473_ZbMTelPfB9v1_iud2wz6ZdTjHwpw-hEegFcjYvvPucf0MsIAgAzK5J20bG8f2Cj9WfR8_ElcOw4YjZVfQ8"/>
+</div>
+<div class="flex-1 flex flex-col justify-center gap-1.5">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-primary dark:text-white text-lg leading-tight">Standard AC Service</h4>
+<div class="flex items-center gap-1 bg-yellow-50 dark:bg-yellow-900/30 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+<span class="text-xs font-bold text-yellow-700 dark:text-yellow-400">4.8</span>
+</div>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400">Includes filter cleaning &amp; gas check</p>
+<div class="flex items-center justify-between mt-1">
+<span class="text-base font-bold text-primary dark:text-white">Starts at $50</span>
+<button class="size-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-opacity-90">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-white dark:bg-primary/40 rounded-lg p-3 shadow-sm border border-gray-100 dark:border-white/5 flex gap-4 items-center">
+<div class="w-24 h-24 shrink-0 rounded-lg bg-gray-200 overflow-hidden relative">
+<img alt="Person vacuuming a modern living room carpet" class="w-full h-full object-cover" data-alt="Person vacuuming a modern living room carpet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2-ZHeyqzbH-X_aKCGnvNuX-bodohuh65MFDiXcEHOyZWJ_WZUqpYcsNDWgQqQsOFuho6gTP0wDNmZO4AWDqUZafKvr8rfF5HR1kusWtOdPeiWY8dP7g7rmGyLLuu0VDQM8_R224gldxqJgZyhipV7Jape3Al2ZtQkxlbJVTMULdCHI8J2lLCeEeu_wRBvQ_Z_BnifDEXga4Q6lNJV_yrEmTBfBG4CvmdSvqi3OqQztJDOGxJMPNGtPdnzXt1GaZe9MWnmBK_Za94"/>
+</div>
+<div class="flex-1 flex flex-col justify-center gap-1.5">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-primary dark:text-white text-lg leading-tight">Deep Home Cleaning</h4>
+<div class="flex items-center gap-1 bg-yellow-50 dark:bg-yellow-900/30 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+<span class="text-xs font-bold text-yellow-700 dark:text-yellow-400">4.9</span>
+</div>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400">Intensive cleaning for all rooms</p>
+<div class="flex items-center justify-between mt-1">
+<span class="text-base font-bold text-primary dark:text-white">Starts at $85</span>
+<button class="size-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-opacity-90">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-white dark:bg-primary/40 rounded-lg p-3 shadow-sm border border-gray-100 dark:border-white/5 flex gap-4 items-center">
+<div class="w-24 h-24 shrink-0 rounded-lg bg-gray-200 overflow-hidden relative">
+<img alt="Close up of fixing a wooden cabinet hinge" class="w-full h-full object-cover" data-alt="Close up of fixing a wooden cabinet hinge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALdtXIynXmagqOOHQJflE4JPKEcx9-mVNASW2XJw1WrbMg24HuwzC0CoG9iRmuRUdUXztFAuZy8dEk80wkI_XXK4vNXR8HWFaVlLesCy6eHW1CwHtSUVcBITh6OjKOxEAwhD6iQ9a8VkFQah4ezC5rkYLOKUmPne07kUHofzTh0iCeIbuPEKWL-nh6C7Onu03WWK6FRa8KVfBCyb5kLute9ZUtOPVnsWYFZ0y0gpSmXky0wJzjDDjSncV2pOf8_ceI5H5iFyoUR3o"/>
+</div>
+<div class="flex-1 flex flex-col justify-center gap-1.5">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-primary dark:text-white text-lg leading-tight">General Handyman</h4>
+<div class="flex items-center gap-1 bg-yellow-50 dark:bg-yellow-900/30 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+<span class="text-xs font-bold text-yellow-700 dark:text-yellow-400">4.7</span>
+</div>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400">Repairs for furniture &amp; fixtures</p>
+<div class="flex items-center justify-between mt-1">
+<span class="text-base font-bold text-primary dark:text-white">$40 / hr</span>
+<button class="size-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-opacity-90">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 w-full max-w-md mx-auto bg-white dark:bg-[#1A2629] border-t border-gray-100 dark:border-white/5 pb-6 pt-3 px-6 z-50">
+<div class="flex justify-between items-center">
+<button class="flex flex-col items-center gap-1 text-primary dark:text-white">
+<div class="bg-primary/10 dark:bg-white/10 p-1.5 rounded-full">
+<span class="material-symbols-outlined fill-1">home</span>
+</div>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-white transition-colors">
+<div class="p-1.5">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+<span class="text-[10px] font-medium">Bookings</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-white transition-colors">
+<div class="p-1.5">
+<span class="material-symbols-outlined">chat_bubble</span>
+</div>
+<span class="text-[10px] font-medium">Messages</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-white transition-colors">
+<div class="p-1.5">
+<span class="material-symbols-outlined">person</span>
+</div>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+</nav>
+</div>
+</body></html>

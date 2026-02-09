@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ox Field Services - Schedule</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b2028",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#131c1f",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e292e",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "2xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-primary dark:text-white transition-colors duration-200">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-32 group/design-root">
+        <!-- Header -->
+        <header
+            class="sticky top-0 z-50 flex items-center justify-between bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md p-4 pb-2">
+            <button onclick="history.back()"
+                class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                <span class="material-symbols-outlined text-[#101619] dark:text-white"
+                    style="font-size: 24px;">arrow_back_ios_new</span>
+            </button>
+            <h1
+                class="text-[#101619] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">
+                Schedule Service</h1>
+        </header>
+        <!-- Progress Step -->
+        <div class="w-full px-4 pt-2 pb-4">
+            <div class="flex justify-between items-center mb-2">
+                <p class="text-[#587e8d] dark:text-gray-400 text-sm font-medium leading-normal">Step 2 of 4</p>
+                <span class="text-xs text-primary/60 dark:text-white/60 font-medium">50% Completed</span>
+            </div>
+            <div class="w-full h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                <div class="h-full w-1/2 bg-primary dark:bg-white rounded-full transition-all duration-500 ease-out">
+                </div>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <main class="flex flex-col gap-8 px-4">
+            <!-- Date Selection -->
+            <section>
+                <h2
+                    class="text-[#101619] dark:text-white tracking-tight text-[22px] font-bold leading-tight mb-4 text-left">
+                    Select Date</h2>
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 p-4">
+                    <!-- Calendar Header -->
+                    <div class="flex items-center justify-between mb-4 px-1">
+                        <button class="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                            <span class="material-symbols-outlined text-[#101619] dark:text-white"
+                                style="font-size: 20px;">chevron_left</span>
+                        </button>
+                        <p class="text-[#101619] dark:text-white text-base font-bold">September 2023</p>
+                        <button class="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                            <span class="material-symbols-outlined text-[#101619] dark:text-white"
+                                style="font-size: 20px;">chevron_right</span>
+                        </button>
+                    </div>
+                    <!-- Calendar Grid -->
+                    <div class="grid grid-cols-7 gap-y-3 gap-x-1 mb-2">
+                        <!-- Days Header -->
+                        <div class="text-center text-[11px] font-bold text-gray-400 uppercase tracking-wider">S</div>
+                        <div class="text-center text-[11px] font-bold text-gray-400 uppercase tracking-wider">M</div>
+                        <div class="text-center text-[11px] font-bold text-gray-400 uppercase tracking-wider">T</div>
+                        <div class="text-center text-[11px] font-bold text-gray-400 uppercase tracking-wider">W</div>
+                        <div class="text-center text-[11px] font-bold text-gray-400 uppercase tracking-wider">T</div>
+                        <div class="text-center text-[11px] font-bold text-gray-400 uppercase tracking-wider">F</div>
+                        <div class="text-center text-[11px] font-bold text-gray-400 uppercase tracking-wider">S</div>
+                        <!-- Days Buttons -->
+                        <button
+                            class="h-9 w-full flex items-center justify-center text-sm text-gray-300 dark:text-gray-700 font-medium">28</button>
+                        <button
+                            class="h-9 w-full flex items-center justify-center text-sm text-gray-300 dark:text-gray-700 font-medium">29</button>
+                        <button
+                            class="h-9 w-full flex items-center justify-center text-sm text-gray-300 dark:text-gray-700 font-medium">30</button>
+                        <button
+                            class="h-9 w-full flex items-center justify-center text-sm text-gray-300 dark:text-gray-700 font-medium">31</button>
+                        <button
+                            class="h-9 w-full flex items-center justify-center text-sm text-[#101619] dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-gray-700 rounded-full transition-colors">1</button>
+                        <button
+                            class="h-9 w-full flex items-center justify-center text-sm text-[#101619] dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-gray-700 rounded-full transition-colors">2</button>
+                        <button
+                            class="h-9 w-full flex items-center justify-center text-sm text-[#101619] dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-gray-700 rounded-full transition-colors">3</button>
+                        <button
+                            class="h-9 w-full flex items-center justify-center text-sm text-[#101619] dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-gray-700 rounded-full transition-colors">4</button>
+                        <!-- Selected Date -->
+                        <div class="h-9 w-full flex items-center justify-center relative">
+                            <button
+                                class="h-9 w-9 flex items-center justify-center text-sm text-white font-bold bg-primary dark:bg-white dark:text-primary rounded-full shadow-md shadow-primary/30 dark:shadow-white/20">5</button>
+                        </div>
+                        <button
+                            class="h-9 w-full flex items-center justify-center text-sm text-[#101619] dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-gray-700 rounded-full transition-colors">6</button>
+                        <button
+                            class="h-9 w-full flex items-center justify-center text-sm text-[#101619] dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-gray-700 rounded-full transition-colors">7</button>
+                        <button
+                            class="h-9 w-full flex items-center justify-center text-sm text-[#101619] dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-gray-700 rounded-full transition-colors">8</button>
+                        <button
+                            class="h-9 w-full flex items-center justify-center text-sm text-[#101619] dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-gray-700 rounded-full transition-colors">9</button>
+                        <button
+                            class="h-9 w-full flex items-center justify-center text-sm text-[#101619] dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-gray-700 rounded-full transition-colors">10</button>
+                    </div>
+                </div>
+            </section>
+            <!-- Time Selection -->
+            <section>
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-[#101619] dark:text-white tracking-tight text-[22px] font-bold leading-tight">
+                        Available Time</h2>
+                    <span
+                        class="text-xs font-semibold text-primary/70 dark:text-white/70 bg-primary/5 dark:bg-white/10 border border-primary/10 dark:border-white/10 px-2.5 py-1 rounded-md">EST</span>
+                </div>
+                <div class="grid grid-cols-3 gap-3">
+                    <button
+                        class="py-3 px-2 rounded-full border border-gray-200 dark:border-gray-700 text-sm font-semibold text-[#101619] dark:text-white hover:border-primary dark:hover:border-white transition-all bg-surface-light dark:bg-surface-dark shadow-sm">
+                        09:00 AM
+                    </button>
+                    <button
+                        class="py-3 px-2 rounded-full border border-gray-100 dark:border-gray-800 text-sm font-semibold text-gray-300 dark:text-gray-600 cursor-not-allowed bg-gray-50 dark:bg-gray-800/30">
+                        09:30 AM
+                    </button>
+                    <!-- Selected Time -->
+                    <button
+                        class="py-3 px-2 rounded-full bg-primary dark:bg-white text-white dark:text-primary text-sm font-semibold shadow-md shadow-primary/25 dark:shadow-white/10 ring-2 ring-primary dark:ring-white ring-offset-2 ring-offset-background-light dark:ring-offset-background-dark transform scale-[1.02]">
+                        10:00 AM
+                    </button>
+                    <button
+                        class="py-3 px-2 rounded-full border border-gray-200 dark:border-gray-700 text-sm font-semibold text-[#101619] dark:text-white hover:border-primary dark:hover:border-white transition-all bg-surface-light dark:bg-surface-dark shadow-sm">
+                        10:30 AM
+                    </button>
+                    <button
+                        class="py-3 px-2 rounded-full border border-gray-200 dark:border-gray-700 text-sm font-semibold text-[#101619] dark:text-white hover:border-primary dark:hover:border-white transition-all bg-surface-light dark:bg-surface-dark shadow-sm">
+                        11:00 AM
+                    </button>
+                    <button
+                        class="py-3 px-2 rounded-full border border-gray-200 dark:border-gray-700 text-sm font-semibold text-[#101619] dark:text-white hover:border-primary dark:hover:border-white transition-all bg-surface-light dark:bg-surface-dark shadow-sm">
+                        11:30 AM
+                    </button>
+                </div>
+            </section>
+            <!-- Upload Evidence -->
+            <section>
+                <div class="flex flex-col gap-1 mb-4">
+                    <h2 class="text-[#101619] dark:text-white tracking-tight text-[22px] font-bold leading-tight">Upload
+                        Evidence</h2>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Add photos or videos of the issue to help the
+                        technician prepare.</p>
+                </div>
+                <!-- Upload Box -->
+                <div
+                    class="group relative flex flex-col items-center justify-center w-full h-36 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all cursor-pointer bg-surface-light dark:bg-surface-dark overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-transparent to-gray-50 dark:to-white/5 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <span
+                        class="material-symbols-outlined text-[#587e8d] dark:text-gray-400 group-hover:text-primary dark:group-hover:text-white mb-2 transition-colors relative z-10"
+                        style="font-size: 36px;">cloud_upload</span>
+                    <p class="text-sm text-[#587e8d] dark:text-gray-400 font-medium relative z-10">Tap or drop to upload
+                    </p>
+                </div>
+                <!-- Progress List -->
+                <div class="mt-4 space-y-3">
+                    <!-- Item 1: Uploading -->
+                    <div
+                        class="flex items-center gap-3 bg-surface-light dark:bg-surface-dark p-3 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm">
+                        <div class="h-12 w-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center shrink-0 overflow-hidden relative"
+                            data-alt="Preview of uploaded kitchen sink image">
+                            <!-- Placeholder for image preview -->
+                            <span class="material-symbols-outlined text-gray-400 dark:text-gray-500"
+                                style="font-size: 24px;">image</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex justify-between items-center mb-1.5">
+                                <p class="text-sm font-bold text-[#101619] dark:text-white truncate pr-2">
+                                    kitchen_sink_leak.jpg</p>
+                                <span class="text-xs font-bold text-primary dark:text-white">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-primary dark:bg-white h-1.5 rounded-full shadow-sm" style="width: 80%">
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="p-2 text-gray-400 hover:text-red-500 transition-colors rounded-full hover:bg-red-50 dark:hover:bg-red-900/20">
+                            <span class="material-symbols-outlined" style="font-size: 20px;">close</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Sticky Footer -->
+        <div
+            class="fixed bottom-0 left-0 right-0 px-6 pt-4 pb-8 bg-gradient-to-t from-white via-white/95 to-white/0 dark:from-background-dark dark:via-background-dark/95 dark:to-background-dark/0 z-40">
+            <button onclick="navigateTo('../checkout_summary/code.html')"
+                class="w-full bg-primary dark:bg-white text-white dark:text-primary h-14 rounded-full font-bold text-lg shadow-xl shadow-primary/20 dark:shadow-white/10 hover:scale-[1.01] active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+                Next Step
+                <span class="material-symbols-outlined" style="font-size: 20px;">arrow_forward</span>
+            </button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            document.body.style.opacity = '0';
+            document.body.style.transform = 'translateX(-20px)';
+            setTimeout(() => window.location.href = url, 200);
+        }
+    </script>
+    <style>
+        body {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+    </style>
+</body>
+
+</html>

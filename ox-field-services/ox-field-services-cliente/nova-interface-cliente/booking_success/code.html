@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Booking Success - Ox Field Services</title>
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Google Fonts: Manrope -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0a2329",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#131d1f",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-[#101719] dark:text-gray-100 antialiased overflow-x-hidden">
+    <div class="relative flex min-h-screen w-full flex-col items-center justify-between p-6">
+        <!-- Main Content Area -->
+        <div class="flex w-full max-w-md flex-1 flex-col items-center pt-12 md:justify-center md:pt-0">
+            <!-- Hero Icon -->
+            <div class="mb-8 flex flex-col items-center">
+                <div
+                    class="flex h-24 w-24 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/40 animate-pulse">
+                    <span class="material-symbols-outlined text-[64px] text-primary dark:text-white"
+                        data-weight="700">check</span>
+                </div>
+            </div>
+            <!-- Headline Section -->
+            <div class="mb-10 text-center">
+                <h1
+                    class="mb-3 text-3xl font-extrabold leading-tight tracking-tight text-primary dark:text-white md:text-4xl">
+                    Booking Confirmed!
+                </h1>
+                <p
+                    class="text-base font-normal leading-relaxed text-[#57838e] dark:text-gray-400 max-w-[280px] mx-auto">
+                    We've received your request and are processing it now.
+                </p>
+            </div>
+            <!-- Summary Card -->
+            <div
+                class="w-full overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:bg-[#1c2a2e] dark:shadow-none border border-gray-100 dark:border-[#2a383c]">
+                <!-- Card Header -->
+                <div class="border-b border-gray-100 dark:border-[#2a383c] bg-primary/5 p-4 text-center">
+                    <p class="text-xs font-semibold uppercase tracking-wider text-[#57838e] dark:text-gray-400">Order
+                        Summary</p>
+                </div>
+                <!-- Details Grid -->
+                <div class="grid grid-cols-1 divide-y divide-gray-100 dark:divide-[#2a383c] p-4">
+                    <!-- Row 1: Order ID & Date -->
+                    <div class="flex justify-between py-3">
+                        <div class="flex flex-col gap-1">
+                            <span class="text-xs font-medium text-[#57838e] dark:text-gray-400">Order ID</span>
+                            <span class="text-sm font-bold text-primary dark:text-white">#OX-2491</span>
+                        </div>
+                        <div class="flex flex-col gap-1 text-right">
+                            <span class="text-xs font-medium text-[#57838e] dark:text-gray-400">Date &amp; Time</span>
+                            <span class="text-sm font-bold text-primary dark:text-white">Oct 24 • 10:00 AM</span>
+                        </div>
+                    </div>
+                    <!-- Row 2: Service Type -->
+                    <div class="flex flex-col gap-1 py-3">
+                        <span class="text-xs font-medium text-[#57838e] dark:text-gray-400">Service Type</span>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg text-primary dark:text-white">hvac</span>
+                            <span class="text-sm font-bold text-primary dark:text-white">HVAC Maintenance</span>
+                        </div>
+                    </div>
+                    <!-- Row 3: Location -->
+                    <div class="flex flex-col gap-1 py-3 pt-3">
+                        <span class="text-xs font-medium text-[#57838e] dark:text-gray-400">Location</span>
+                        <div class="flex items-start gap-2">
+                            <span
+                                class="material-symbols-outlined mt-0.5 text-lg text-primary dark:text-white">location_on</span>
+                            <span class="text-sm font-medium text-primary dark:text-white leading-snug">123 Maple Ave,
+                                Springfield,<br />IL 62704</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Technician Note -->
+            <div class="mt-8 px-4 text-center">
+                <p class="text-sm font-medium leading-relaxed text-[#57838e] dark:text-gray-400">
+                    We are currently assigning the best technician for your job. You will receive a notification once
+                    they are on the way.
+                </p>
+            </div>
+        </div>
+        <!-- Action Buttons -->
+        <div class="mt-8 flex w-full max-w-md flex-col gap-3 pb-4">
+            <!-- Primary Button -->
+            <button onclick="navigateTo('../live_technician_tracking/code.html')"
+                class="group relative flex h-14 w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-primary text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 hover:shadow-primary/30 active:scale-[0.98]">
+                <span class="flex items-center gap-2 text-base font-bold tracking-wide">
+                    <span class="material-symbols-outlined text-[20px]">location_searching</span>
+                    Track My Service
+                </span>
+            </button>
+            <!-- Secondary Button -->
+            <button onclick="navigateTo('../marketplace_home/code.html')"
+                class="group flex h-14 w-full cursor-pointer items-center justify-center rounded-xl border-2 border-primary/10 bg-transparent text-primary transition-all hover:bg-primary/5 active:scale-[0.98] dark:border-white/10 dark:text-white dark:hover:bg-white/5">
+                <span class="text-base font-bold tracking-wide">Back to Home</span>
+            </button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            document.body.style.opacity = '0';
+            document.body.style.transform = 'translateX(-20px)';
+            setTimeout(() => window.location.href = url, 200);
+        }
+    </script>
+    <style>
+        body {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+    </style>
+</body>
+
+</html>

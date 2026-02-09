@@ -1,0 +1,8 @@
+{
+  "name": "Ox Field Services",
+  "description": "Exclusive tool for field technicians to manage tasks, materials, and execution flow offline and online.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}

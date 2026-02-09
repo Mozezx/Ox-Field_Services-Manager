@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Before & After Gallery - Ox Field Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0a2329",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#131d1f",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: 100dvh;
+        }
+
+        .page-transition {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-primary dark:text-white antialiased page-transition">
+    <div
+        class="relative flex h-full min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden">
+        <!-- Header -->
+        <header
+            class="sticky top-0 z-20 flex items-center bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100 dark:border-gray-800">
+            <button onclick="navigateTo('../document_center_&_history/code.html')"
+                class="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <span class="material-symbols-outlined text-primary dark:text-white">arrow_back</span>
+            </button>
+            <h1 class="text-lg font-bold text-primary dark:text-white tracking-tight">Before & After</h1>
+            <button
+                class="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <span class="material-symbols-outlined text-primary dark:text-white">share</span>
+            </button>
+        </header>
+
+        <!-- Service Info -->
+        <div class="px-5 py-4 bg-white dark:bg-[#1a2629] border-b border-gray-100 dark:border-gray-800">
+            <div class="flex items-center gap-3">
+                <div
+                    class="flex items-center justify-center size-12 rounded-xl bg-primary/10 dark:bg-white/10 text-primary dark:text-white">
+                    <span class="material-symbols-outlined">ac_unit</span>
+                </div>
+                <div>
+                    <h2 class="font-bold text-primary dark:text-white">HVAC Repair</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Oct 24, 2023 • Technician: Mike S.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Content -->
+        <div class="flex-1 px-5 py-6 overflow-y-auto">
+            <!-- Before Section -->
+            <div class="mb-8">
+                <div class="flex items-center gap-2 mb-4">
+                    <span
+                        class="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full">Before</span>
+                    <span class="text-sm text-gray-500 dark:text-gray-400">3 photos</span>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="aspect-square rounded-xl bg-gray-200 dark:bg-gray-800 overflow-hidden">
+                        <div class="w-full h-full bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDbN619K3u0XoTqUCckWykMuZtjQM4am_hCpPdFycZxzWmFqq_ukdnVNR-QrULX31vRCHPnq8Oqz4yGU7rEQR6qyotMYwk4csOo-JbevYhP50AmX4YoNT4ADsI2K5M6iA6hT9sD3FG-3RR_KImiv2K2Jo8k9kv_6r45RHV_0jpfXSdsC-Jj1qaM6yRUUkas9evwBFVkYiICb6EcfGG_25jmX1XcomVZAyCHc_l4S-LDIVGXj1doxwbWzQsnhR3o2x7y3UdxzCuNjlU');">
+                        </div>
+                    </div>
+                    <div class="aspect-square rounded-xl bg-gray-200 dark:bg-gray-800 overflow-hidden">
+                        <div class="w-full h-full bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALdtXIynXmagqOOHQJflE4JPKEcx9-mVNASW2XJw1WrbMg24HuwzC0CoG9iRmuRUdUXztFAuZy8dEk80wkI_XXK4vNXR8HWFaVlLesCy6eHW1CwHtSUVcBITh6OjKOxEAwhD6iQ9a8VkFQah4ezC5rkYLOKUmPne07kUHofzTh0iCeIbuPEKWL-nh6C7Onu03WWK6FRa8KVfBCyb5kLute9ZUtOPVnsWYFZ0y0gpSmXky0wJzjDDjSncV2pOf8_ceI5H5iFyoUR3o');">
+                        </div>
+                    </div>
+                    <div class="aspect-square rounded-xl bg-gray-200 dark:bg-gray-800 overflow-hidden col-span-2">
+                        <div class="w-full h-full bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2-ZHeyqzbH-X_aKCGnvNuX-bodohuh65MFDiXcEHOyZWJ_WZUqpYcsNDWgQqQsOFuho6gTP0wDNmZO4AWDqUZafKvr8rfF5HR1kusWtOdPeiWY8dP7g7rmGyLLuu0VDQM8_R224gldxqJgZyhipV7Jape3Al2ZtQkxlbJVTMULdCHI8J2lLCeEeu_wRBvQ_Z_BnifDEXga4Q6lNJV_yrEmTBfBG4CvmdSvqi3OqQztJDOGxJMPNGtPdnzXt1GaZe9MWnmBK_Za94');">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- After Section -->
+            <div class="mb-8">
+                <div class="flex items-center gap-2 mb-4">
+                    <span
+                        class="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full">After</span>
+                    <span class="text-sm text-gray-500 dark:text-gray-400">3 photos</span>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="aspect-square rounded-xl bg-gray-200 dark:bg-gray-800 overflow-hidden">
+                        <div class="w-full h-full bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCVeqjpTwNtA-efwT979wb-DuDoDBPPpOYamzB52UDWFVbtAQOCNDfX1YaNnVl__2_DT4tCWxQS_AIhDz7WDR87PpKMefomo9hM6QvW98Vmkha8z5NdHWHODh1gH90O3qcn_ysfZ5R5xtC_67dXYff4n8hTjnn_MPOySXZ3JL61jPPXGjmo6TKi473_ZbMTelPfB9v1_iud2wz6ZdTjHwpw-hEegFcjYvvPucf0MsIAgAzK5J20bG8f2Cj9WfR8_ElcOw4YjZVfQ8');">
+                        </div>
+                    </div>
+                    <div class="aspect-square rounded-xl bg-gray-200 dark:bg-gray-800 overflow-hidden">
+                        <div class="w-full h-full bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuATEJn7mxl1fCbCuyl5O13wwP6vA8tAQmaxjZEFIBFhZn3o530-72f-8eus0WfrtuhyabjZGvcdbwxq_WqYhP5WTnhuHnH5OlwVBscvblhdZ3Xps2Qj6rv6hj99VrSssusE8elKbLHdz2xOgmstr7JyOT3qGdP-7uzOwhMrwMNac-Y6TYDW0FpK9WlqWhAoturx8_NWIP5KznAbrR9SCafLb_w60NMLs3SWhsSsA-WCu2qcWEAVTR2TSLtTutjr5VqpkQ516nyrehQ');">
+                        </div>
+                    </div>
+                    <div class="aspect-square rounded-xl bg-gray-200 dark:bg-gray-800 overflow-hidden col-span-2">
+                        <div class="w-full h-full bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhZ4kN3i9lbURLB_R-4NEoMN0Hti8d67zdyUB9YTTmVmA-xyq_IDWsyh1xLDVXDm6C3qxBKch8VjhXMtYahh8PFu1_DzA9DjcT6r6V-21zTvB7RAEI-DYAH7C6z4EC7-YU6nBSyHypt2mHnoJrdAYJ7xzxIKCbbbfjJJ9eTs-wkUFM4g0u7sEEQ2PV4JC0Xl09wSoweo0995yIj0Yr2lzQdTYPTV7f0rO6DWG2EvMFSFoyW6cG0Na784yx8kmbN5-1OecaHT5aqRo');">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technician Notes -->
+            <div class="bg-white dark:bg-[#1a2629] rounded-xl p-4 border border-gray-100 dark:border-gray-800">
+                <h3 class="font-bold text-primary dark:text-white mb-2 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px]">description</span>
+                    Technician Notes
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Replaced air filter and cleaned condenser coils. Recharged refrigerant to optimal levels. System now
+                    running at peak efficiency with improved airflow.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(url) {
+            document.body.style.opacity = '0';
+            document.body.style.transform = 'translateX(-20px)';
+            setTimeout(() => window.location.href = url, 200);
+        }
+    </script>
+</body>
+
+</html>

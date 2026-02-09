@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notification Center - Ox Field Services</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#11add4",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#101e22",
+                        "card-light": "#ffffff",
+                        "card-dark": "#18282c",
+                        "unread-dot": "#0B242A",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem", 
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "2xl": "1rem", // 16px as requested
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            }
+            .material-symbols-outlined.filled {
+                font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col antialiased selection:bg-primary/30">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
+<div class="flex items-center justify-between px-4 py-3 sm:px-6">
+<!-- Back Button -->
+<button class="flex items-center justify-center w-10 h-10 -ml-2 rounded-full text-slate-800 dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[28px]">chevron_left</span>
+</button>
+<!-- Title -->
+<h1 class="text-lg font-bold text-slate-900 dark:text-white tracking-tight">Notifications</h1>
+<!-- Action -->
+<button class="text-sm font-bold text-primary hover:text-primary/80 transition-colors px-2 py-1 rounded-lg">
+                Mark all as read
+            </button>
+</div>
+</div>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-md mx-auto px-4 pb-8 sm:px-0">
+<!-- Section: Today -->
+<div class="mt-6">
+<h2 class="px-2 mb-3 text-lg font-bold text-slate-900 dark:text-white">Today</h2>
+<div class="space-y-3">
+<!-- Notification Item 1: Technician En Route (Unread) -->
+<div class="group relative flex items-start gap-4 p-4 bg-card-light dark:bg-card-dark rounded-2xl shadow-soft border border-transparent dark:border-gray-800 hover:border-primary/20 transition-all cursor-pointer overflow-hidden">
+<!-- Unread Indicator Strip (Optional visual flair) or just the dot requested -->
+<!-- Icon -->
+<div class="shrink-0 relative">
+<div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-primary/10 text-primary dark:bg-primary/20">
+<span class="material-symbols-outlined filled">local_shipping</span>
+</div>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0 pt-0.5">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-base font-bold text-slate-900 dark:text-white truncate pr-2">Technician En Route</h3>
+<span class="text-xs font-medium text-primary whitespace-nowrap">10:45 AM</span>
+</div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2">
+                            Mike is 10 mins away. Please ensure someone is home to let him in.
+                        </p>
+</div>
+<!-- Unread Dot (As requested: #0B242A) -->
+<div class="absolute top-1/2 -translate-y-1/2 right-4 flex items-center justify-center">
+<!-- Using the requested dark teal for light mode, and primary for dark mode visibility -->
+<div class="w-2.5 h-2.5 rounded-full bg-unread-dot dark:bg-primary shadow-sm ring-4 ring-white dark:ring-card-dark"></div>
+</div>
+</div>
+<!-- Notification Item 2: Appointment Confirmed -->
+<div class="group relative flex items-start gap-4 p-4 bg-card-light dark:bg-card-dark rounded-2xl shadow-soft border border-transparent dark:border-gray-800 hover:border-primary/20 transition-all cursor-pointer">
+<!-- Icon -->
+<div class="shrink-0">
+<div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-500 dark:bg-indigo-500/20 dark:text-indigo-300">
+<span class="material-symbols-outlined filled">event_available</span>
+</div>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0 pt-0.5">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-base font-bold text-slate-900 dark:text-white truncate pr-2">Appointment Confirmed</h3>
+<span class="text-xs font-medium text-slate-400 dark:text-slate-500 whitespace-nowrap">9:00 AM</span>
+</div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+                            HVAC Repair set for Oct 24.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Yesterday -->
+<div class="mt-8">
+<h2 class="px-2 mb-3 text-lg font-bold text-slate-900 dark:text-white">Yesterday</h2>
+<div class="space-y-3">
+<!-- Notification Item 3: Invoice Ready -->
+<div class="group relative flex items-start gap-4 p-4 bg-card-light dark:bg-card-dark rounded-2xl shadow-soft border border-transparent dark:border-gray-800 hover:border-primary/20 transition-all cursor-pointer">
+<!-- Icon -->
+<div class="shrink-0">
+<div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-400">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0 pt-0.5">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-base font-bold text-slate-900 dark:text-white truncate pr-2">Invoice Ready</h3>
+<span class="text-xs font-medium text-slate-400 dark:text-slate-500 whitespace-nowrap">4:30 PM</span>
+</div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+                            Receipt for Plumbing Service #402 is now available for download.
+                        </p>
+</div>
+</div>
+<!-- Notification Item 4: Review Service -->
+<div class="group relative flex items-start gap-4 p-4 bg-card-light dark:bg-card-dark rounded-2xl shadow-soft border border-transparent dark:border-gray-800 hover:border-primary/20 transition-all cursor-pointer">
+<!-- Icon -->
+<div class="shrink-0">
+<div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-amber-50 text-amber-500 dark:bg-amber-500/20 dark:text-amber-400">
+<span class="material-symbols-outlined filled">star</span>
+</div>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0 pt-0.5">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-base font-bold text-slate-900 dark:text-white truncate pr-2">Review Service</h3>
+<span class="text-xs font-medium text-slate-400 dark:text-slate-500 whitespace-nowrap">2:00 PM</span>
+</div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+                            How was your experience with Mike? Rate your service to help others.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Earlier (Example of older simple notification) -->
+<div class="mt-8 mb-12">
+<h2 class="px-2 mb-3 text-lg font-bold text-slate-900 dark:text-white">Earlier</h2>
+<div class="space-y-3">
+<div class="group relative flex items-start gap-4 p-4 bg-card-light/60 dark:bg-card-dark/60 rounded-2xl shadow-sm border border-transparent dark:border-gray-800 hover:bg-card-light dark:hover:bg-card-dark transition-all cursor-pointer">
+<!-- Icon -->
+<div class="shrink-0">
+<div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-slate-100 text-slate-500 dark:bg-slate-700/30 dark:text-slate-400">
+<span class="material-symbols-outlined">shield</span>
+</div>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0 pt-0.5">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-base font-bold text-slate-900 dark:text-white truncate pr-2">System Update</h3>
+<span class="text-xs font-medium text-slate-400 dark:text-slate-500 whitespace-nowrap">Oct 20</span>
+</div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+                            Ox Field Services Terms of Service have been updated.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Mockup (Optional context) -->
+<div class="sticky bottom-0 bg-card-light dark:bg-card-dark border-t border-gray-100 dark:border-gray-800 pb-8 pt-2 px-6 flex justify-between items-center text-xs font-medium text-slate-400 dark:text-slate-500">
+<div class="flex flex-col items-center gap-1 hover:text-primary cursor-pointer transition-colors">
+<span class="material-symbols-outlined">home</span>
+<span>Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 hover:text-primary cursor-pointer transition-colors">
+<span class="material-symbols-outlined">search</span>
+<span>Browse</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary cursor-pointer transition-colors">
+<div class="relative">
+<span class="material-symbols-outlined filled">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-card-dark"></span>
+</div>
+<span>Alerts</span>
+</div>
+<div class="flex flex-col items-center gap-1 hover:text-primary cursor-pointer transition-colors">
+<span class="material-symbols-outlined">person</span>
+<span>Profile</span>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Live Technician Tracking</title>
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b2028",
+                        "background-light": "#ffffff",
+                        "background-dark": "#131c1f",
+                        "surface-light": "#f6f7f8",
+                        "surface-dark": "#1c262a",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "2.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for timeline if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Map marker pulse animation */
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        .marker-pulse::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(11, 32, 40, 0.4);
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulse-ring 2s infinite;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-primary dark:text-white antialiased overflow-hidden">
+    <!-- Main Container -->
+    <div class="relative flex h-screen w-full flex-col overflow-hidden">
+        <!-- Top Navigation Overlay (Floating) -->
+        <div class="absolute top-0 left-0 w-full z-20 pt-12 px-5 flex justify-between items-center pointer-events-none">
+            <button onclick="history.back()"
+                class="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-surface-dark shadow-lg text-primary dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+            </button>
+            <div
+                class="pointer-events-auto px-4 py-2 bg-white/90 dark:bg-surface-dark/90 backdrop-blur-md rounded-full shadow-lg">
+                <span class="text-xs font-bold uppercase tracking-wider text-primary dark:text-white">Live
+                    Tracking</span>
+            </div>
+            <button
+                class="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-surface-dark shadow-lg text-primary dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                <span class="material-symbols-outlined text-[20px]">more_horiz</span>
+            </button>
+        </div>
+        <!-- Map Section (Top 65%) -->
+        <div class="relative w-full h-[65vh] bg-gray-200 z-0">
+            <!-- Map Background Image -->
+            <div class="absolute inset-0 bg-cover bg-center"
+                data-alt="Digital map view of city streets with light colors" data-location="Seattle"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAgXw1L0U3rMWKKHeF9Z8XBQW7qIL6HNJKB4NfiyKf_HrPlThmHFPnnWFBjTfouZBLKks8l9gMRgM1luSTojs1jpQkOT1Ls0tx1TNYuy5OyddS7XMgWC3db9cVdF-ylwu2vWK8uh3KyuPFHfT3H2jNqgVgF9k5d7CT-7M5fP7-dTsSzx9TcPzb5zQll7O_kwQdJi-2NpdcXcPyqlaWtnn7qHog96rmOsXOs8q5DV_fCkKFuDUnhXE6jc1ne5Kn9WqMqsfcQVU_Z1G0"); filter: contrast(0.9) brightness(1.1);'>
+            </div>
+            <!-- Map Overlay Gradient for better header visibility -->
+            <div class="absolute top-0 w-full h-24 bg-gradient-to-b from-black/20 to-transparent pointer-events-none">
+            </div>
+            <!-- Route Line Simulation (SVG) -->
+            <svg class="absolute inset-0 h-full w-full pointer-events-none opacity-80" style="z-index: 1;">
+                <path d="M 180 250 Q 220 320 280 400" fill="none" stroke="#0b2028" stroke-dasharray="8 4"
+                    stroke-linecap="round" stroke-width="4"></path>
+            </svg>
+            <!-- Technician Marker -->
+            <div class="absolute top-[35%] left-[45%] flex flex-col items-center z-10">
+                <div
+                    class="bg-primary text-white text-[10px] font-bold px-2.5 py-1 rounded-lg mb-2 shadow-md whitespace-nowrap">
+                    12 min away
+                </div>
+                <div
+                    class="marker-pulse relative flex items-center justify-center h-12 w-12 bg-primary rounded-full border-[3px] border-white dark:border-gray-800 shadow-xl">
+                    <span class="material-symbols-outlined text-white text-[20px]">local_shipping</span>
+                </div>
+            </div>
+            <!-- User Home Marker -->
+            <div class="absolute bottom-[20%] right-[25%] flex flex-col items-center z-10">
+                <div
+                    class="h-4 w-4 bg-blue-500 rounded-full border-2 border-white dark:border-gray-800 shadow-md ring-4 ring-blue-500/20">
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Sheet (Overlapping Map) -->
+        <div
+            class="absolute bottom-0 w-full h-[40vh] min-h-[380px] flex flex-col bg-background-light dark:bg-surface-dark rounded-t-[32px] shadow-[0_-10px_40px_rgba(0,0,0,0.1)] z-30 transition-all duration-300">
+            <!-- Handle -->
+            <div class="w-full flex justify-center pt-3 pb-2 cursor-grab active:cursor-grabbing">
+                <div class="h-1.5 w-12 rounded-full bg-gray-200 dark:bg-gray-600"></div>
+            </div>
+            <!-- Scrollable Content -->
+            <div class="flex-1 overflow-y-auto no-scrollbar px-6 pb-8 pt-2">
+                <!-- Technician Profile Card -->
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-4">
+                        <div class="relative shrink-0">
+                            <div class="h-16 w-16 rounded-full bg-gray-200 bg-cover bg-center border-2 border-white dark:border-gray-700 shadow-sm"
+                                data-alt="Portrait of technician Michael R."
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBA_5JqIbOdQhgiHdtNB8f3Ge8Zo9tXlmtb43Dk6zukRpL9G4s4ipG1AKr5RNWOKmcSIub0C1pDKn1LHzTxUXR9vm-VAKgIOEkf6dEpOmyLG28gOLaFj3hDsu4Pk8Gn32OAxt2T1gqnSJIqCVatN8dW7GaJKTUiqQ7W3u8aguTkVKS4NFvMSFLz7gBl_4jJ4jDH-FSn_ppk24HqFzR1HFTYsCmuZBsOn7kXFd2UWyoMl25r8hyhBbZj_TVZH-yEWVXK9wGZQzKGZlw");'>
+                            </div>
+                            <div
+                                class="absolute -bottom-1 -right-1 bg-green-500 h-4 w-4 rounded-full border-2 border-white dark:border-surface-dark">
+                            </div>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between">
+                                <h2 class="text-xl font-bold text-primary dark:text-white truncate">Michael R.</h2>
+                                <div
+                                    class="flex items-center gap-1 bg-surface-light dark:bg-gray-800 px-2 py-0.5 rounded-full">
+                                    <span
+                                        class="material-symbols-outlined text-yellow-500 text-[14px] fill-current">star</span>
+                                    <span class="text-xs font-bold text-primary dark:text-gray-200">4.9</span>
+                                    <span class="text-[10px] text-gray-500 dark:text-gray-400">(120)</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 truncate">Ford Transit • GHT-4592
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Actions -->
+                    <div class="flex gap-3">
+                        <button onclick="navigateTo('../service_support_chat_1/code.html')"
+                            class="flex-1 flex items-center justify-center gap-2 h-12 rounded-full bg-surface-light dark:bg-gray-800 text-primary dark:text-white font-bold text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+                            Chat
+                        </button>
+                        <button
+                            class="flex-1 flex items-center justify-center gap-2 h-12 rounded-full bg-primary text-white font-bold text-sm shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all active:scale-[0.98]">
+                            <span class="material-symbols-outlined text-[20px]">call</span>
+                            Call
+                        </button>
+                    </div>
+                </div>
+                <!-- Divider -->
+                <div class="w-full h-px bg-gray-100 dark:bg-gray-700 my-6"></div>
+                <!-- Timeline -->
+                <div class="flex flex-col px-1">
+                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-5 ml-1">Live Status</h3>
+                    <!-- Step 1: En Route (Active) -->
+                    <div class="flex gap-4 relative group">
+                        <!-- Line connecting steps -->
+                        <div class="absolute left-[15px] top-[32px] bottom-[-20px] w-0.5 bg-gray-200 dark:bg-gray-700">
+                        </div>
+                        <div class="relative z-10 flex flex-col items-center">
+                            <div
+                                class="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center shadow-md ring-4 ring-white dark:ring-surface-dark">
+                                <span class="material-symbols-outlined text-[16px]">local_shipping</span>
+                            </div>
+                        </div>
+                        <div class="pb-8 pt-1 flex-1">
+                            <p class="text-primary dark:text-white font-bold leading-tight">Technician en route</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Expected arrival 10:45 AM</p>
+                        </div>
+                    </div>
+                    <!-- Step 2: Arrived (Pending) -->
+                    <div class="flex gap-4 relative group opacity-60">
+                        <!-- Line connecting steps -->
+                        <div class="absolute left-[15px] top-[32px] bottom-[-20px] w-0.5 bg-gray-200 dark:bg-gray-700">
+                        </div>
+                        <div class="relative z-10 flex flex-col items-center">
+                            <div
+                                class="h-8 w-8 rounded-full bg-surface-light dark:bg-gray-800 text-gray-400 flex items-center justify-center border-2 border-transparent group-hover:border-gray-300 dark:group-hover:border-gray-600 transition-colors ring-4 ring-white dark:ring-surface-dark">
+                                <span class="material-symbols-outlined text-[16px]">location_on</span>
+                            </div>
+                        </div>
+                        <div class="pb-8 pt-1 flex-1">
+                            <p class="text-gray-500 dark:text-gray-400 font-medium">Arrived</p>
+                        </div>
+                    </div>
+                    <!-- Step 3: Started (Pending) -->
+                    <div class="flex gap-4 relative opacity-40">
+                        <div class="relative z-10 flex flex-col items-center">
+                            <div
+                                class="h-8 w-8 rounded-full bg-surface-light dark:bg-gray-800 text-gray-400 flex items-center justify-center ring-4 ring-white dark:ring-surface-dark">
+                                <span class="material-symbols-outlined text-[16px]">build</span>
+                            </div>
+                        </div>
+                        <div class="pt-1 flex-1">
+                            <p class="text-gray-500 dark:text-gray-400 font-medium">Service Started</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            document.body.style.opacity = '0';
+            document.body.style.transform = 'translateX(-20px)';
+            setTimeout(() => window.location.href = url, 200);
+        }
+    </script>
+    <style>
+        body {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+    </style>
+</body>
+
+</html>

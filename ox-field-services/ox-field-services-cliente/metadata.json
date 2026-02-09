@@ -1,0 +1,7 @@
+{
+  "name": "Ox Field Services",
+  "description": "Transparency and control for your field service needs.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
